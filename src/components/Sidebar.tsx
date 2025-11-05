@@ -206,7 +206,7 @@ export function Sidebar({
               <ChevronDown className="w-4 h-4 text-gray-400" />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end">
+          <DropdownMenuContent className="w-56 bg-white" align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>

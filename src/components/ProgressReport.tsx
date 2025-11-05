@@ -282,7 +282,7 @@ export function ProgressReport({ onBack }: ProgressReportProps) {
               <div className="p-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl text-white">
                 <div className="mb-6">
                   <p className="text-emerald-100 mb-2">My Impact</p>
-                  <h3 className="text-white mb-1">€1,230 Saved</h3>
+                  <h3 className="text-white mb-1 text-lg font-medium">€1,230 Saved</h3>
                   <p className="text-emerald-100">380kg CO₂ Reduced in 6 months</p>
                 </div>
                 <div className="flex items-center gap-2 mb-4">

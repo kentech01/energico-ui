@@ -90,7 +90,7 @@ export default function App() {
       )}
 
       {currentView === "onboarding" && (
-        <OnboardingFlow onComplete={() => setCurrentView("dashboard")} />
+        <OnboardingFlow onComplete={() => setCurrentView("dashboard")} onBack={() => setCurrentView("landing")}  />
       )}
 
       {!isAuthPage && (

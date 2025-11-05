@@ -1,7 +1,7 @@
-# 🚀 WattWise Enhancements Summary
+# 🚀 Energico Enhancements Summary
 
 ## Overview
-This document outlines all the enhancements made to the WattWise AI Energy Coach application, focusing on improved sidebar navigation, enhanced profile management, and comprehensive functionality across all features.
+This document outlines all the enhancements made to the Energico AI Energy Coach application, focusing on improved sidebar navigation, enhanced profile management, and comprehensive functionality across all features.
 
 ---
 
@@ -191,10 +191,10 @@ This document outlines all the enhancements made to the WattWise AI Energy Coach
 1. Understanding Your Energy Bill (5 min read)
 2. LED vs Traditional Lighting (8 min read)
 3. HVAC Optimization Guide (12 min video)
-4. How WattWise AI Works (6 min read)
+4. How Energico AI Works (6 min read)
 
 **FAQs (6 comprehensive answers):**
-1. How does WattWise calculate savings?
+1. How does Energico calculate savings?
 2. Is my data secure?
 3. How accurate are AI recommendations?
 4. Can I use without uploading bills?

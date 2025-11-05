@@ -1,6 +1,6 @@
-# 🚀 WattWise Quick Start Guide
+# 🚀 Energico Quick Start Guide
 
-Welcome to **WattWise** — your AI Energy Coach! This guide will help you navigate and use all the features effectively.
+Welcome to **Energico** — your AI Energy Coach! This guide will help you navigate and use all the features effectively.
 
 ---
 
@@ -21,7 +21,7 @@ Welcome to **WattWise** — your AI Energy Coach! This guide will help you navig
 ## 🎯 Getting Started (First Time Users)
 
 ### Step 1: Landing Page
-- Review the benefits of WattWise
+- Review the benefits of Energico
 - Check out customer testimonials
 - Click **"Start Free"** to begin
 
@@ -196,7 +196,7 @@ Welcome to **WattWise** — your AI Energy Coach! This guide will help you navig
 - Understanding your energy bill
 - LED vs traditional lighting
 - HVAC optimization
-- How WattWise AI works
+- How Energico AI works
 
 ---
 
@@ -271,7 +271,7 @@ Welcome to **WattWise** — your AI Energy Coach! This guide will help you navig
 - Instant answers
 
 #### Email Support
-- support@wattwise.com
+- support@energico.com
 - 24-hour response time
 - Detailed explanations
 
@@ -401,14 +401,14 @@ Unlock special badges for:
 ## 📞 Contact Information
 
 ### Support Channels
-- **Email**: support@wattwise.com
+- **Email**: support@energico.com
 - **Phone**: +1 (555) 123-4567
 - **Hours**: Mon-Fri, 9am-5pm EST
 - **Response Time**: Within 24 hours
 
 ### Social Media
 - **LinkedIn**: Share your achievements
-- **Community**: Join the WattWise forum
+- **Community**: Join the Energico forum
 - **Updates**: Follow for new features
 
 ---
@@ -480,9 +480,9 @@ Ready to start saving? Here's your action plan:
 
 ---
 
-**Welcome to the WattWise family! Let's make your business greener, one watt at a time.** 🌱⚡
+**Welcome to the Energico family! Let's make your business greener, one watt at a time.** 🌱⚡
 
-*Questions? Contact support@wattwise.com or check the Knowledge Base.*
+*Questions? Contact support@energico.com or check the Knowledge Base.*
 
 ---
 

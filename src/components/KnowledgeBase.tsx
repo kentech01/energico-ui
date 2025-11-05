@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "What if I don't have all the recommended equipment?",
     answer:
-      "That's perfectly fine! WattWise provides recommendations across different difficulty levels and investment requirements. You can filter tips by 'Easy' to find no-cost or low-cost behavioral changes that don't require new equipment.",
+      "That's perfectly fine! Energico provides recommendations across different difficulty levels and investment requirements. You can filter tips by 'Easy' to find no-cost or low-cost behavioral changes that don't require new equipment.",
   },
   {
     question: "How do Green Points work?",
@@ -115,7 +115,7 @@ export function KnowledgeBase({ onBack }: KnowledgeBaseProps) {
           <div>
             <h1 className="text-gray-900 mb-2">Knowledge Base</h1>
             <p className="text-gray-600">
-              Learn everything about energy efficiency and WattWise
+              Learn everything about energy efficiency and Energico
             </p>
           </div>
         </div>

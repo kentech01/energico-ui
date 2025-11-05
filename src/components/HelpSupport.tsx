@@ -56,7 +56,7 @@ export function HelpSupport({ onBack }: HelpSupportProps) {
           <div>
             <h1 className="text-gray-900 mb-2">Help & Support</h1>
             <p className="text-gray-600">
-              We're here to help you succeed with WattWise
+              We're here to help you succeed with Energico
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export function HelpSupport({ onBack }: HelpSupportProps) {
               <p className="text-gray-600 mb-4">
                 Get help via email within 24 hours
               </p>
-              <p className="text-gray-500">support@wattwise.com</p>
+              <p className="text-gray-500">support@energico.com</p>
             </CardContent>
           </Card>
 
@@ -258,7 +258,7 @@ export function HelpSupport({ onBack }: HelpSupportProps) {
                     <div>
                       <h3 className="text-gray-900 mb-2">Video Tutorials</h3>
                       <p className="text-gray-600 mb-4">
-                        Watch step-by-step guides on using WattWise
+                        Watch step-by-step guides on using Energico
                       </p>
                       <Button variant="outline">Watch Videos</Button>
                     </div>
@@ -292,7 +292,7 @@ export function HelpSupport({ onBack }: HelpSupportProps) {
                     <div>
                       <h3 className="text-gray-900 mb-2">Community Forum</h3>
                       <p className="text-gray-600 mb-4">
-                        Connect with other WattWise users
+                        Connect with other Energico users
                       </p>
                       <Button variant="outline">Join Discussion</Button>
                     </div>

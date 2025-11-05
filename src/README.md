@@ -1,12 +1,12 @@
-# 🌍 WattWise — AI Energy Coach for Small Businesses
+# 🌍 Energico — AI Energy Coach for Small Businesses
 
 > Save Energy. Save Money. Go Green.
 
-WattWise is a comprehensive AI-powered energy management platform designed specifically for small businesses. Turn complex energy data into simple, actionable daily recommendations that can reduce costs by up to 25% — no hardware or expert setup required.
+Energico is a comprehensive AI-powered energy management platform designed specifically for small businesses. Turn complex energy data into simple, actionable daily recommendations that can reduce costs by up to 25% — no hardware or expert setup required.
 
 ## 🎯 Mission Statement
 
-We believe energy efficiency shouldn't require experts or expensive tools. WattWise empowers every business owner to take control of their consumption, save money, and protect the planet — one small action at a time.
+We believe energy efficiency shouldn't require experts or expensive tools. Energico empowers every business owner to take control of their consumption, save money, and protect the planet — one small action at a time.
 
 ---
 
@@ -41,7 +41,7 @@ We believe energy efficiency shouldn't require experts or expensive tools. WattW
 - **Green Points System**: Earn points for completing energy-saving actions
 - **Level Progression**: Advance through levels as you accumulate points
 - **Leaderboard**: Compare your performance with other businesses in your region
-- **Community Impact**: See combined achievements of all WattWise users
+- **Community Impact**: See combined achievements of all Energico users
 - **Badges & Achievements**: Unlock special recognition for major milestones
 
 ### 👥 Team Management
@@ -270,7 +270,7 @@ We believe energy efficiency shouldn't require experts or expensive tools. WattW
 
 ## 🚀 Getting Started
 
-1. **Landing Page**: Learn about WattWise benefits
+1. **Landing Page**: Learn about Energico benefits
 2. **Sign Up**: Quick 2-minute onboarding
 3. **Upload Bill**: Snap a photo or upload PDF of your energy bill
 4. **Select Devices**: Tell us what equipment you use

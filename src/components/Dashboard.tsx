@@ -97,7 +97,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Header */}
         <div className="mb-8">
-          <h1 className="text-gray-900 mb-2">Welcome back, Sarah 👋</h1>
+          <h1 className="text-gray-900 mb-2 text-2xl font-medium">Welcome back, Sarah 👋</h1>
           <p className="text-gray-600">
             You're on a {userStats.streak}-day streak! Keep up the great work.
           </p>
@@ -154,7 +154,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h2 className="text-gray-900 mb-1">Your Recommendations</h2>
+                <h2 className="text-gray-900 mb-1 text-xl font-medium">Your Recommendations</h2>
                 <p className="text-gray-600">
                   AI-powered tips to save energy and money
                 </p>
@@ -194,7 +194,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
                             <h3 className="text-gray-900">{rec.title}</h3>
                             <Badge
                               variant="secondary"
-                              className="flex-shrink-0"
+                              className="flex-shrink-0 bg-custom-grayish rounded-lg"
                             >
                               {rec.difficulty}
                             </Badge>
