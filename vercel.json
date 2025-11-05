@@ -12,5 +12,7 @@
       "dest": "/index.html"
     }
   ],
-  "framework": "vite"
+  "framework": "vite",
+  "outputDirectory": "dist"
+
 }
