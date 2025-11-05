@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -250,7 +250,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
             <Button
               variant="outline"
               onClick={() => onNavigate("insights")}
-              className="w-full sm:hidden"
+              className="w-full sm:hidden "
             >
               View All Recommendations
               <ChevronRight className="w-4 h-4 ml-2" />
