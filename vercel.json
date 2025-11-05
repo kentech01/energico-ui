@@ -13,6 +13,5 @@
     }
   ],
   "framework": "vite",
-  "outputDirectory": "dist"
-
+  "outputDirectory": "build"
 }
