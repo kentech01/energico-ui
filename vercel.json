@@ -13,5 +13,5 @@
     }
   ],
   "framework": "vite",
-  "outputDirectory": "build"
+  "outputDirectory": "build/"
 }
