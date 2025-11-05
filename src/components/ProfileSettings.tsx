@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { Input } from "./ui/input";
@@ -9,6 +9,7 @@ import { Badge } from "./ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Switch } from "./ui/switch";
 import { Separator } from "./ui/separator";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   Building2,
@@ -26,11 +27,10 @@ import {
 } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 
-interface ProfileSettingsProps {
-  onBack: () => void;
-}
 
-export function ProfileSettings({ onBack }: ProfileSettingsProps) {
+
+export function ProfileSettings() {
+  const navigate = useNavigate();
   const [businessName, setBusinessName] = useState("Green Café");
   const [ownerName, setOwnerName] = useState("Sarah Chen");
   const [email, setEmail] = useState("sarah@greencafe.com");
@@ -64,7 +64,7 @@ export function ProfileSettings({ onBack }: ProfileSettingsProps) {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack}>
+          <Button variant="ghost" onClick={()=> navigate("/app/")}>
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>

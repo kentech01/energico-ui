@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Sidebar } from "./Sidebar";
 import { MobileSidebar } from "./MobileSidebar";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import {Outlet} from "react-router-dom"
 import { Menu, Bell, Award } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -23,6 +25,8 @@ export function AppLayout({
   onSignOut,
 }: AppLayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const locationSlice = location.pathname.slice(5)
 
   const userStats = {
     energySaved: 23,
@@ -36,10 +40,10 @@ export function AppLayout({
       {/* Desktop Sidebar - Always Visible */}
       <Sidebar
         currentView={currentView}
-        onNavigate={onNavigate}
         greenPoints={greenPoints}
         notificationCount={notificationCount}
         onSignOut={onSignOut}
+        locationName={locationSlice}
       />
 
       {/* Mobile Sidebar - Drawer */}
@@ -86,7 +90,7 @@ export function AppLayout({
 
         {/* Page Content */}
         <main className="flex-1 overflow-y-auto">
-          {children}
+          <Outlet></Outlet>
         </main>
       </div>
     </div>

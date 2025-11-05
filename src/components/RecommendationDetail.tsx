@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { useNavigate } from "react-router-dom";
 import { Switch } from "./ui/switch";
 import {
   ArrowLeft,
@@ -16,7 +17,6 @@ import {
 } from "lucide-react";
 
 interface RecommendationDetailProps {
-  onBack: () => void;
   onComplete?: () => void;
 }
 
@@ -64,7 +64,8 @@ const nextRecommendations = [
   },
 ];
 
-export function RecommendationDetail({ onBack, onComplete }: RecommendationDetailProps) {
+export function RecommendationDetail({ onComplete }: RecommendationDetailProps) {
+  const navigate = useNavigate();
   const [completed, setCompleted] = useState(false);
 
   const handleToggleComplete = (checked: boolean) => {
@@ -81,7 +82,7 @@ export function RecommendationDetail({ onBack, onComplete }: RecommendationDetai
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack} className="mb-4">
+          <Button variant="ghost" onClick={()=>navigate("/app/")} className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
@@ -33,11 +33,9 @@ import {
   Legend,
 } from "recharts";
 
-interface RenewableSimulatorProps {
-  onBack: () => void;
-}
 
-export function RenewableSimulator({ onBack }: RenewableSimulatorProps) {
+
+export function RenewableSimulator() {
   const [formData, setFormData] = useState({
     location: "",
     areaSize: "",

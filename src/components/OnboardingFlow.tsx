@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Progress } from "./ui/progress";
@@ -6,13 +6,14 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Upload, Camera, Laptop, Wind, Lightbulb, Thermometer, Coffee } from "lucide-react";
 import { Checkbox } from "./ui/checkbox";
+import { useNavigate } from "react-router-dom";
 
 interface OnboardingFlowProps {
   onComplete: () => void;
-  onBack: () => void;
 }
 
-export function OnboardingFlow({ onComplete, onBack }: OnboardingFlowProps) {
+export function OnboardingFlow({ onComplete}: OnboardingFlowProps) {
+  const navigate= useNavigate();
   const [step, setStep] = useState(1);
   const [billFile, setBillFile] = useState<File | null>(null);
   const [selectedDevices, setSelectedDevices] = useState<string[]>([]);
@@ -44,7 +45,7 @@ export function OnboardingFlow({ onComplete, onBack }: OnboardingFlowProps) {
     if (step < 3) {
       setStep(step + 1);
     } else {
-      onComplete();
+      navigate("/app/")
     }
   };
 
@@ -240,7 +241,7 @@ export function OnboardingFlow({ onComplete, onBack }: OnboardingFlowProps) {
                 Back
               </Button>
             )}
-            {step === 1 &&( <Button variant="outline" onClick={onBack}>
+            {step === 1 &&( <Button variant="outline" onClick={()=>navigate("/")}>
                 Back
               </Button>)}
             <Button

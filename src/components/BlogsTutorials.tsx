@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -13,9 +13,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-interface BlogsTutorialsProps {
-  onBack: () => void;
-}
+
 
 const articles = [
   {
@@ -143,7 +141,7 @@ const tutorials = [
   },
 ];
 
-export function BlogsTutorials({ onBack }: BlogsTutorialsProps) {
+export function BlogsTutorials() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const categories = ["all", "Kosovo Energy", "Energy Tips", "Global News"];

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
@@ -12,9 +12,7 @@ import {
 } from "./ui/select";
 import { Plus, Trash2, Calculator as CalcIcon, Zap } from "lucide-react";
 
-interface CalculatorProps {
-  onBack: () => void;
-}
+
 
 interface Device {
   id: number;
@@ -24,7 +22,7 @@ interface Device {
   energyUsage: number;
 }
 
-export function Calculator({ onBack }: CalculatorProps) {
+export function Calculator() {
   const [devices, setDevices] = useState<Device[]>([
     { id: 1, type: "computer", model: "", quantity: 1, energyUsage: 0 },
   ]);

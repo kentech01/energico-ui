@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { useNavigate } from "react-router-dom";
 import {
   BookOpen,
   Video,
@@ -23,9 +24,6 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { Input } from "./ui/input";
 
-interface PublicBlogProps {
-  onBack: () => void;
-}
 
 const articles = [
   {
@@ -213,7 +211,8 @@ const tutorials = [
   },
 ];
 
-export function PublicBlog({ onBack }: PublicBlogProps) {
+export function PublicBlog() {
+  const navigate = useNavigate()
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   // useEffect(()=>{
@@ -298,7 +297,7 @@ export function PublicBlog({ onBack }: PublicBlogProps) {
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
-              onClick={onBack}
+              onClick={()=>navigate("/")}
               className="hover:bg-gray-100"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
@@ -591,7 +590,7 @@ export function PublicBlog({ onBack }: PublicBlogProps) {
               saving today.
             </p>
             <Button
-              onClick={onBack}
+              onClick={()=>navigate("/auth")}
               className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-xl"
             >
               Get Started Free

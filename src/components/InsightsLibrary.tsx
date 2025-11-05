@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { useNavigate } from "react-router-dom";
 import { Input } from "./ui/input";
 import {
   Select,
@@ -30,7 +31,6 @@ import {
 } from "lucide-react";
 
 interface InsightsLibraryProps {
-  onBack: () => void;
   onViewDetail: (id: number) => void;
 }
 
@@ -154,12 +154,13 @@ const allRecommendations = [
   },
 ];
 
-export function InsightsLibrary({ onBack, onViewDetail }: InsightsLibraryProps) {
+export function InsightsLibrary({ onViewDetail }: InsightsLibraryProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
   const [sortBy, setSortBy] = useState("savings");
   const [activeTab, setActiveTab] = useState("all");
+  const navigate = useNavigate();
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -234,7 +235,7 @@ export function InsightsLibrary({ onBack, onViewDetail }: InsightsLibraryProps) 
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack} className="mb-4">
+          <Button variant="ghost" onClick={()=> navigate("/app/")} className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>
