@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -214,17 +214,18 @@ const tutorials = [
 ];
 
 export function PublicBlog({ onBack }: PublicBlogProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-
+  // useEffect(()=>{
+  //   console.log(filteredArticles);
+  // }, [selectedCategory])
   const categories = [
     { id: "all", label: "All Content", icon: Sparkles },
     { id: "News in Kosovo", label: "News in Kosovo", icon: Newspaper },
     { id: "Global Energy", label: "Global Energy", icon: Globe },
     { id: "Tutorials & Videos", label: "Tutorials & Videos", icon: Video },
   ];
-
-  const filteredArticles = articles.filter((article) => {
+  const filteredArticles= articles.filter((article) => {
     const matchesCategory =
       selectedCategory === "all" || article.category === selectedCategory;
     const matchesSearch =
@@ -233,6 +234,7 @@ export function PublicBlog({ onBack }: PublicBlogProps) {
       article.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+  
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },

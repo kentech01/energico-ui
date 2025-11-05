@@ -1,6 +1,6 @@
-# 📦 WattWise Component Architecture Guide
+# 📦 Energico Component Architecture Guide
 
-Complete reference for all React components in the WattWise application.
+Complete reference for all React components in the Energico application.
 
 ---
 
@@ -551,7 +551,7 @@ Complete reference for all React components in the WattWise application.
 
 #### Contact Options (3 cards)
 1. **Live Chat**: Real-time support
-2. **Email**: support@wattwise.com
+2. **Email**: support@energico.com
 3. **Phone**: +1 (555) 123-4567
 
 #### Tabs
@@ -871,4 +871,4 @@ Each component should include:
 
 **Total Components**: 13 main + 30+ UI components
 
-*This guide provides a complete reference for understanding and working with WattWise components.*
+*This guide provides a complete reference for understanding and working with Energico components.*

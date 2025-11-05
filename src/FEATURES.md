@@ -1,4 +1,4 @@
-# 🎯 WattWise — Complete Feature List
+# 🎯 Energico — Complete Feature List
 
 ## 🏠 Landing Page & Onboarding
 
@@ -407,7 +407,7 @@
 ## 🎨 Sidebar Navigation
 
 ### Desktop Sidebar
-- ✅ WattWise logo and tagline
+- ✅ Energico logo and tagline
 - ✅ Quick stats widget
   - Energy saved %
   - Money saved €

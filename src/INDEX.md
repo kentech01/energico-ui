@@ -1,6 +1,6 @@
-# 📚 WattWise Documentation Index
+# 📚 Energico Documentation Index
 
-Welcome to the complete documentation for **WattWise - AI Energy Coach for Small Businesses**.
+Welcome to the complete documentation for **Energico - AI Energy Coach for Small Businesses**.
 
 ---
 
@@ -422,7 +422,7 @@ Update when:
 
 **For Users:**
 - See [QUICKSTART.md](./QUICKSTART.md) Help section
-- Contact: support@wattwise.com
+- Contact: support@energico.com
 
 **For Developers:**
 - Review [COMPONENT_GUIDE.md](./COMPONENT_GUIDE.md)
@@ -479,8 +479,8 @@ Update when:
 
 ---
 
-**Welcome to WattWise! Use this index to navigate our comprehensive documentation and build amazing energy-saving features.** 🌍⚡
+**Welcome to Energico! Use this index to navigate our comprehensive documentation and build amazing energy-saving features.** 🌍⚡
 
 ---
 
-*Questions? Start with the README.md or reach out to support@wattwise.com*
+*Questions? Start with the README.md or reach out to support@energico.com*

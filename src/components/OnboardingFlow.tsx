@@ -9,9 +9,10 @@ import { Checkbox } from "./ui/checkbox";
 
 interface OnboardingFlowProps {
   onComplete: () => void;
+  onBack: () => void;
 }
 
-export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
+export function OnboardingFlow({ onComplete, onBack }: OnboardingFlowProps) {
   const [step, setStep] = useState(1);
   const [billFile, setBillFile] = useState<File | null>(null);
   const [selectedDevices, setSelectedDevices] = useState<string[]>([]);
@@ -239,10 +240,13 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
                 Back
               </Button>
             )}
+            {step === 1 &&( <Button variant="outline" onClick={onBack}>
+                Back
+              </Button>)}
             <Button
               onClick={handleNext}
               disabled={!canProceed()}
-              className="ml-auto bg-emerald-500 hover:bg-emerald-600"
+              className="ml-auto bg-emerald-500 hover:bg-emerald-600 text-white"
             >
               {step === 3 ? "Complete Setup" : "Continue"}
             </Button>

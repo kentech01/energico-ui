@@ -111,7 +111,7 @@ export function Calculator({ onBack }: CalculatorProps) {
                       )}
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <Label>Device Type</Label>
                         <Select
@@ -223,7 +223,7 @@ export function Calculator({ onBack }: CalculatorProps) {
 
                 {/* Monthly Estimates */}
                 <div>
-                  <h3 className="text-gray-900 mb-3">Monthly Estimates</h3>
+                  <h3 className="text-gray-900 text-lg font-medium mb-3">Monthly Estimates</h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Energy Usage</span>
@@ -232,7 +232,7 @@ export function Calculator({ onBack }: CalculatorProps) {
                       </span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Estimated Cost</span>
+                      <span className="text-gray-600 ">Estimated Cost</span>
                       <span className="text-gray-900">
                         €{monthlyCost.toFixed(2)}
                       </span>
@@ -241,7 +241,7 @@ export function Calculator({ onBack }: CalculatorProps) {
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">
-                  <h3 className="text-gray-900 mb-3">Yearly Estimates</h3>
+                  <h3 className="text-gray-900 text-lg font-medium mb-3">Yearly Estimates</h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Energy Usage</span>

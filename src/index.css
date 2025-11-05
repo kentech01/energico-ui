@@ -8,6 +8,45 @@
     scroll-behavior: smooth;
   }
 }
+.data-\[state\=checked\]\:text-primary-foreground[data-state="checked"] {
+  color: #fff;
+}
+.shadow-xs {
+  --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.bg-input-background {
+  background-color: #f3f3f5;
+}
+.bg-primary {
+  background-color: #030213;
+}
+.text-primary-foreground {
+  color: white;
+}
+:where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+:where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.bg-card {
+  background-color: white;
+}
+.data-\[state\=checked\]\:bg-primary[data-state="checked"] {
+  background-color: #030213;
+}
+
+.data-\[state\=checked\]\:border-primary[data-state="checked"] {
+  border-color: var(--primary);
+}
+.data-\[state\=active\]\:bg-card[data-state="active"] {
+  background-color: white;
+}
 
 @layer components {
   .btn-primary {
