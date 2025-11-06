@@ -30,9 +30,7 @@ import {
   Leaf,
 } from "lucide-react";
 
-interface InsightsLibraryProps {
-  onViewDetail: (id: number) => void;
-}
+
 
 const allRecommendations = [
   {
@@ -154,7 +152,7 @@ const allRecommendations = [
   },
 ];
 
-export function InsightsLibrary({ onViewDetail }: InsightsLibraryProps) {
+export function InsightsLibrary() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
@@ -363,7 +361,7 @@ export function InsightsLibrary({ onViewDetail }: InsightsLibraryProps) {
                     <Card
                       key={rec.id}
                       className="cursor-pointer hover:shadow-lg transition-all"
-                      onClick={() => onViewDetail(rec.id)}
+                      onClick={() => navigate("/app/recomendation")}
                     >
                       <CardContent className="pt-6">
                         <div className="flex items-start justify-between mb-4">
@@ -414,7 +412,7 @@ export function InsightsLibrary({ onViewDetail }: InsightsLibraryProps) {
                           className="w-full"
                           onClick={(e) => {
                             e.stopPropagation();
-                            onViewDetail(rec.id);
+                            navigate("/app/recomendation")
                           }}
                         >
                           View Details

@@ -19,12 +19,12 @@ interface Device {
   type: string;
   model: string;
   quantity: number;
-  energyUsage: number;
+  energyUsage: number | "";
 }
 
 export function Calculator() {
   const [devices, setDevices] = useState<Device[]>([
-    { id: 1, type: "computer", model: "", quantity: 1, energyUsage: 0 },
+    { id: 1, type: "computer", model: "", quantity: 1, energyUsage: "" },
   ]);
 
   const addDevice = () => {
@@ -33,7 +33,7 @@ export function Calculator() {
       type: "computer",
       model: "",
       quantity: 1,
-      energyUsage: 0,
+      energyUsage: "",
     };
     setDevices([...devices, newDevice]);
   };
@@ -53,7 +53,7 @@ export function Calculator() {
   };
 
   const totalEnergy = devices.reduce(
-    (sum, device) => sum + device.quantity * device.energyUsage,
+    (sum, device) => sum + (typeof device.energyUsage === "number" ? device.quantity * device.energyUsage : 0),
     0
   );
 
@@ -169,9 +169,9 @@ export function Calculator() {
                         <Input
                           type="number"
                           step="0.01"
-                          min="0"
+                          // min="-0.1"
                           placeholder="e.g., 0.15"
-                          value={device.energyUsage || ""}
+                          value={device.energyUsage}
                           onChange={(e) =>
                             updateDevice(
                               device.id,
