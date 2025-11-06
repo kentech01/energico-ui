@@ -15,6 +15,9 @@
   --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, #0000000d);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
+/* .stopScrollingBody{
+  overflow: hidden;
+} */
 .bg-input-background {
   background-color: #f3f3f5;
 }
@@ -23,6 +26,9 @@
 }
 .text-primary-foreground {
   color: white;
+}
+.bg-border{
+  background-color: #0000001a;
 }
 :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) h1 {
   font-size: 1.5rem;

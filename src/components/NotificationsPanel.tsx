@@ -1,7 +1,9 @@
 import { Button } from "./ui/button";
+import {React} from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   Bell,
@@ -12,9 +14,7 @@ import {
   X,
 } from "lucide-react";
 
-interface NotificationsPanelProps {
-  onBack: () => void;
-}
+
 
 const notifications = [
   {
@@ -69,7 +69,8 @@ const notifications = [
   },
 ];
 
-export function NotificationsPanel({ onBack }: NotificationsPanelProps) {
+export function NotificationsPanel() {
+  const navigate = useNavigate();
   const unreadCount = notifications.filter((n) => !n.read).length;
 
   return (
@@ -77,7 +78,7 @@ export function NotificationsPanel({ onBack }: NotificationsPanelProps) {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack} className="mb-4">
+          <Button variant="ghost" onClick={()=>navigate("/app/")} className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>

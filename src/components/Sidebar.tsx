@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,19 +35,23 @@ import {
 
 interface SidebarProps {
   currentView: string;
-  onNavigate: (view: string) => void;
   greenPoints: number;
   notificationCount: number;
   onSignOut: () => void;
+  locationName: string;
 }
 
 export function Sidebar({
   currentView,
-  onNavigate,
   greenPoints,
   notificationCount,
   onSignOut,
+  locationName
 }: SidebarProps) {
+  const navigate = useNavigate();
+  locationName == "" ? "dashboard" : locationName
+  console.log(locationName, "from inside");
+  
   const [userStats] = useState({
     energySaved: 23,
     moneySaved: 156,
@@ -113,7 +118,8 @@ export function Sidebar({
       <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = currentView === item.id;
+          const isActive = locationName== ""? item.id == "dashboard": locationName === item.id;
+
 
           return (
             <button
@@ -123,7 +129,7 @@ export function Sidebar({
                   ? "bg-emerald-500 text-white"
                   : "text-gray-400 hover:bg-gray-800 hover:text-white"
               }`}
-              onClick={() => onNavigate(item.id)}
+              onClick={() => navigate(item.id == "dashboard"? "" : item.id)}
             >
               <Icon className="w-5 h-5" />
               <span className="flex-1 text-left">{item.label}</span>
@@ -140,7 +146,7 @@ export function Sidebar({
 
         {bottomNavItems.map((item) => {
           const Icon = item.icon;
-          const isActive = currentView === item.id;
+          const isActive = locationName === item.id;
 
           return (
             <button
@@ -150,7 +156,7 @@ export function Sidebar({
                   ? "bg-emerald-500 text-white"
                   : "text-gray-400 hover:bg-gray-800 hover:text-white"
               }`}
-              onClick={() => onNavigate(item.id)}
+              onClick={() => navigate(item.id)}
             >
               <Icon className="w-5 h-5" />
               <span className="flex-1 text-left">{item.label}</span>
@@ -162,7 +168,7 @@ export function Sidebar({
       {/* Quick Actions */}
       <div className="p-4 border-t border-gray-800 space-y-2">
         <Button
-          onClick={() => onNavigate("upload")}
+          onClick={() => navigate("auth")}
           className="w-full bg-emerald-500 hover:bg-emerald-600 text-white"
         >
           <Upload className="w-4 h-4 mr-2" />
@@ -210,15 +216,15 @@ export function Sidebar({
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem onClick={() => onNavigate("profile")}>
+              <DropdownMenuItem onClick={() => navigate("profile")}>
                 <Users className="mr-2 h-4 w-4" />
                 <span>Profile & Business</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => onNavigate("settings")}>
+              <DropdownMenuItem onClick={() => navigate("profile")}>
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Settings</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => onNavigate("notifications")}>
+              <DropdownMenuItem onClick={() => navigate("notifications")}>
                 <Bell className="mr-2 h-4 w-4" />
                 <span>Notifications</span>
                 {notificationCount > 0 && (
@@ -229,7 +235,7 @@ export function Sidebar({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => onNavigate("help")}>
+            <DropdownMenuItem onClick={() => navigate("help")}>
               <HelpCircle className="mr-2 h-4 w-4" />
               <span>Help & Support</span>
             </DropdownMenuItem>

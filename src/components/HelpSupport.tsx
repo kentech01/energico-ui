@@ -4,7 +4,9 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
+import {React} from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   MessageCircle,
@@ -19,9 +21,6 @@ import {
 } from "lucide-react";
 import { toast } from "sonner@2.0.3";
 
-interface HelpSupportProps {
-  onBack: () => void;
-}
 
 const supportTickets = [
   {
@@ -38,7 +37,8 @@ const supportTickets = [
   },
 ];
 
-export function HelpSupport({ onBack }: HelpSupportProps) {
+export function HelpSupport() {
+  const navigate = useNavigate()
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Support ticket created! We'll get back to you within 24 hours.");
@@ -49,7 +49,7 @@ export function HelpSupport({ onBack }: HelpSupportProps) {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack} className="mb-4">
+          <Button variant="ghost" onClick={()=> navigate("/app/")} className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>

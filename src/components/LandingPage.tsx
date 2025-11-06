@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import {React} from "react";
 import { Badge } from "./ui/badge";
+import { useNavigate } from "react-router-dom";
 import {
   Upload,
   Lightbulb,
@@ -28,12 +29,12 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-interface LandingPageProps {
-  onGetStarted: () => void;
-  onViewBlog?: () => void;
+export interface LandingPageProps{
+  modalInteract: ()=>void;
 }
 
-export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
+export function LandingPage({modalInteract}: LandingPageProps) {
+  const navigation = useNavigate();
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -158,12 +159,10 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
             </div>
           </motion.div>
           <div className="flex items-center gap-3">
-            {onViewBlog && (
-              <Button variant="ghost" onClick={onViewBlog}>
+              <Button variant="ghost" onClick={()=>navigation("/blog")}>
                 Blog
               </Button>
-            )}
-            <Button variant="outline" onClick={onGetStarted}>
+            <Button variant="outline" onClick={modalInteract}>
               Sign In
             </Button>
           </div>
@@ -213,22 +212,20 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
                 variants={fadeInUp}
               >
                 <Button
-                  onClick={onGetStarted}
+                  onClick={()=> navigation('/auth')}
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Start Free
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-                {onViewBlog && (
                   <Button
-                    onClick={onViewBlog}
+                    onClick={()=>navigation('/blog')}
                     variant="outline"
                     className="px-8 py-6 text-lg border-2 hover:bg-gray-50"
                   >
                     <BookOpen className="w-5 h-5 mr-2" />
                     Explore Blog & Tutorials
                   </Button>
-                )}
               </motion.div>
 
               <motion.p
@@ -708,7 +705,6 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
             ))}
           </motion.div>
 
-          {onViewBlog && (
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -716,14 +712,13 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
               className="text-center"
             >
               <Button
-                onClick={onViewBlog}
+                onClick={()=>navigation('/blog')}
                 className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-6 text-lg shadow-lg"
               >
                 View All Articles & Tutorials
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>
-          )}
         </div>
       </section>
 
@@ -850,21 +845,19 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
-                onClick={onGetStarted}
+                onClick={()=> navigation("/auth")}
                 className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-xl"
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              {onViewBlog && (
                 <Button
-                  onClick={onViewBlog}
+                  onClick={()=>navigation('/blog')}
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
                 >
                   Learn More
                 </Button>
-              )}
             </div>
             <p className="text-emerald-100 mt-6">
               ✓ Free forever • ✓ No credit card • ✓ Setup in 2 minutes
@@ -898,22 +891,20 @@ export function LandingPage({ onGetStarted, onViewBlog }: LandingPageProps) {
               <ul className="space-y-2">
                 <li>
                   <button
-                    onClick={onGetStarted}
+                    onClick={()=>navigation("/auth")}
                     className="text-gray-400 hover:text-emerald-400 transition-colors"
                   >
                     Get Started
                   </button>
                 </li>
-                {onViewBlog && (
                   <li>
                     <button
-                      onClick={onViewBlog}
+                      onClick={()=>navigation("/blog")}
                       className="text-gray-400 hover:text-emerald-400 transition-colors"
                     >
                       Blog & Tutorials
                     </button>
                   </li>
-                )}
                 <li>
                   <a
                     href="#"

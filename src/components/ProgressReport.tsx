@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import {React} from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { useNavigate } from "react-router-dom";
 import {
   Download,
   Share2,
@@ -28,9 +29,7 @@ import {
   Legend,
 } from "recharts";
 
-interface ProgressReportProps {
-  onBack: () => void;
-}
+
 
 const monthlyData = [
   { month: "May", usage: 1450, savings: 0, target: 1400 },
@@ -75,13 +74,14 @@ const achievements = [
   },
 ];
 
-export function ProgressReport({ onBack }: ProgressReportProps) {
+export function ProgressReport() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Button variant="ghost" onClick={onBack} className="mb-4">
+          <Button variant="ghost" onClick={()=>navigate("/app/")} className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>
