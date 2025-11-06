@@ -24,7 +24,6 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { Input } from "./ui/input";
 
-
 const articles = [
   {
     id: 1,
@@ -212,19 +211,22 @@ const tutorials = [
 ];
 
 export function PublicBlog() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   // useEffect(()=>{
   //   console.log(filteredArticles);
   // }, [selectedCategory])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const categories = [
     { id: "all", label: "All Content", icon: Sparkles },
     { id: "News in Kosovo", label: "News in Kosovo", icon: Newspaper },
     { id: "Global Energy", label: "Global Energy", icon: Globe },
     { id: "Tutorials & Videos", label: "Tutorials & Videos", icon: Video },
   ];
-  const filteredArticles= articles.filter((article) => {
+  let filteredArticles = articles.filter((article) => {
     const matchesCategory =
       selectedCategory === "all" || article.category === selectedCategory;
     const matchesSearch =
@@ -233,7 +235,6 @@ export function PublicBlog() {
       article.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-  
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -293,11 +294,14 @@ export function PublicBlog() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+          id="topBlog"
+        >
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
               className="hover:bg-gray-100"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
@@ -340,9 +344,9 @@ export function PublicBlog() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Stay updated with the latest energy news from Kosovo and around the
-              world. Learn practical tips and watch expert tutorials to maximize
-              your energy savings.
+              Stay updated with the latest energy news from Kosovo and around
+              the world. Learn practical tips and watch expert tutorials to
+              maximize your energy savings.
             </p>
 
             {/* Search Bar */}
@@ -431,8 +435,7 @@ export function PublicBlog() {
             <TabsContent value="articles">
               <motion.div
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                animate="visible" // use animate instead of whileInView
                 variants={staggerContainer}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
@@ -590,7 +593,7 @@ export function PublicBlog() {
               saving today.
             </p>
             <Button
-              onClick={()=>navigate("/auth")}
+              onClick={() => navigate("/auth")}
               className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-xl"
             >
               Get Started Free

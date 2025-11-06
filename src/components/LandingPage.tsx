@@ -712,7 +712,8 @@ export function LandingPage({modalInteract}: LandingPageProps) {
               className="text-center"
             >
               <Button
-                onClick={()=>navigation('/blog')}
+              type="button"
+                onClick={()=>{navigation('/blog#topBlog')}}
                 className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-6 text-lg shadow-lg"
               >
                 View All Articles & Tutorials
