@@ -29,9 +29,11 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
+export interface LandingPageProps{
+  modalInteract: ()=>void;
+}
 
-
-export function LandingPage() {
+export function LandingPage({modalInteract}: LandingPageProps) {
   const navigation = useNavigate();
   const [scrollY, setScrollY] = useState(0);
 
@@ -160,7 +162,7 @@ export function LandingPage() {
               <Button variant="ghost" onClick={()=>navigation("/blog")}>
                 Blog
               </Button>
-            <Button variant="outline" onClick={()=>navigation("/auth")}>
+            <Button variant="outline" onClick={modalInteract}>
               Sign In
             </Button>
           </div>

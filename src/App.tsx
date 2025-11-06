@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import { LandingPage } from "./components/LandingPage";
 import { PublicBlog } from "./components/PublicBlog";
 import { OnboardingFlow } from "./components/OnboardingFlow";
@@ -16,6 +16,7 @@ import { NotificationsPanel } from "./components/NotificationsPanel";
 import { HelpSupport } from "./components/HelpSupport";
 import { Chatbot } from "./components/Chatbot";
 import { Toaster } from "./components/ui/sonner";
+import { AuthModal } from "./components/AuthModal";
 import { Routes, Route } from "react-router-dom";
 // import { Route } from "lucide-react";
 
@@ -37,12 +38,30 @@ type View =
   | "notifications";
 
 export default function App() {
+  const [isModalOpen, setModalOpen]= useState(false)
   const [greenPoints, setGreenPoints] = useState(320);
   const [notificationCount] = useState(3);
 
   const handleCompleteRecommendation = () => {
     setGreenPoints((prev) => prev + 25); // Award points for completing recommendations
   };
+  useEffect(() => {
+    if (isModalOpen) {
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Enable scrolling
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+  const openCloseModal= ()=>{
+   setModalOpen(!isModalOpen);
+  }
 
   const handleSignOut = () => {
     setGreenPoints(320); // Reset to default
@@ -53,12 +72,13 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Toaster position="top-right" richColors />
-
+      {isModalOpen && <AuthModal modalInteract={openCloseModal}></AuthModal>}
       <Routes>
         <Route
           path="/"
+          
           element={
-            <LandingPage onGetStarted={() => {}} onViewBlog={() => {}} />
+            <LandingPage  modalInteract={openCloseModal} />
           }
         />
         <Route path="/blog" element={<PublicBlog  />} />
@@ -126,3 +146,5 @@ export default function App() {
     </div>
   );
 }
+
+
