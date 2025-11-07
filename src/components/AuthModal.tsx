@@ -11,12 +11,10 @@ export function AuthModal({modalInteract}:AuthModalProps) {
   }
 
   const handleParentClick=()=>{
-    console.log("test");
     modalInteract()
   }
   const handleChildClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log("Child clicked!");
   };
   return (
     <div className="bg-black/20 backdrop-blur-md border-b border-white/30 w-full h-full fixed top-0 left-0 z-[900] flex items-center justify-center" onClick={handleParentClick}>
