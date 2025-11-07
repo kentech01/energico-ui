@@ -85,7 +85,7 @@ export default function App() {
 
         <Route
           path="/auth"
-          element={<OnboardingFlow onComplete={() => {}}  />}
+          element={<OnboardingFlow  />}
         />
 
         <Route

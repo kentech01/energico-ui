@@ -50,7 +50,6 @@ export function Sidebar({
 }: SidebarProps) {
   const navigate = useNavigate();
   locationName == "" ? "dashboard" : locationName
-  console.log(locationName, "from inside");
   
   const [userStats] = useState({
     energySaved: 23,

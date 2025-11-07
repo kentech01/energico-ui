@@ -8,11 +8,9 @@ import { Upload, Camera, Laptop, Wind, Lightbulb, Thermometer, Coffee } from "lu
 import { Checkbox } from "./ui/checkbox";
 import { useNavigate } from "react-router-dom";
 
-interface OnboardingFlowProps {
-  onComplete: () => void;
-}
 
-export function OnboardingFlow({ onComplete}: OnboardingFlowProps) {
+
+export function OnboardingFlow() {
   const navigate= useNavigate();
   const [step, setStep] = useState(1);
   const [billFile, setBillFile] = useState<File | null>(null);

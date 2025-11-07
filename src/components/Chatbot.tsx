@@ -110,7 +110,7 @@ export function Chatbot() {
 
           <CardContent className="flex-1 flex flex-col p-0">
             {/* Messages Area */}
-            <ScrollArea className="flex-1 p-4">
+            <ScrollArea className="flex-1 p-4 pt-0 max-h-[300px]">
               <div className="space-y-4">
                 {messages.map((message) => (
                   <div
