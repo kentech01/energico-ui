@@ -87,7 +87,7 @@ export function Chatbot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 border-emerald-200 flex flex-col">
+        <Card className="fixed bottom-6 right-6 sm:w-96 w-[90%]  h-[500px] shadow-2xl z-50 border-emerald-200 flex flex-col">
           <CardHeader className="bg-emerald-500 text-white rounded-t-lg pb-4">
             <CardTitle className="flex items-center justify-between">
               <div className="flex items-center gap-2">

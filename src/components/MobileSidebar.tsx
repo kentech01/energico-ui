@@ -1,8 +1,10 @@
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
+import {React} from "react"
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
 import { Separator } from "./ui/separator";
+import { useNavigate } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -62,6 +64,7 @@ export function MobileSidebar({
     { id: "blogs", label: "Blogs & Tutorials", icon: BookOpen, badge: null },
     { id: "reports", label: "Reports", icon: TrendingUp, badge: null },
   ];
+  const navigate = useNavigate();
 
   const bottomNavItems = [
     { id: "profile", label: "Profile", icon: Settings },
@@ -72,10 +75,6 @@ export function MobileSidebar({
   const pointsToNextLevel = 100 - (greenPoints % 100);
   const progressToNextLevel = greenPoints % 100;
 
-  const handleNavigate = (view: string) => {
-    onNavigate(view);
-    onClose();
-  };
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -151,7 +150,7 @@ export function MobileSidebar({
                       ? "bg-emerald-500 text-white"
                       : "text-gray-400 hover:bg-gray-800 hover:text-white"
                   }`}
-                  onClick={() => handleNavigate(item.id)}
+                  onClick={() => {navigate(item.id=== "dashboard" ? "" :item.id); onClose()}}
                 >
                   <Icon className="w-5 h-5" />
                   <span className="flex-1 text-left">{item.label}</span>
@@ -178,7 +177,7 @@ export function MobileSidebar({
                       ? "bg-emerald-500 text-white"
                       : "text-gray-400 hover:bg-gray-800 hover:text-white"
                   }`}
-                  onClick={() => handleNavigate(item.id)}
+                  onClick={() => {navigate(item.id); onClose()}}
                 >
                   <Icon className="w-5 h-5" />
                   <span className="flex-1 text-left">{item.label}</span>
@@ -190,7 +189,7 @@ export function MobileSidebar({
           {/* Upload Button */}
           <div className="p-4 border-t border-gray-800">
             <Button
-              onClick={() => handleNavigate("insights")}
+              onClick={() => {navigate("insights"); onClose()}}
               className="w-full bg-emerald-500 hover:bg-emerald-600 text-white"
             >
               <Upload className="w-4 h-4 mr-2" />
