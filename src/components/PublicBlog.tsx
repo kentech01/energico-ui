@@ -20,7 +20,7 @@ import {
   ChevronRight,
   Sparkles,
 } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+// import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { Input } from "./ui/input";
 
@@ -450,7 +450,7 @@ export function PublicBlog() {
                     <motion.div key={article.id} variants={fadeInUp}>
                       <Card className="border-none shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer h-full">
                         <div className="relative h-56 overflow-hidden">
-                          <ImageWithFallback
+                          <img
                             src={article.image}
                             alt={article.title}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -511,7 +511,7 @@ export function PublicBlog() {
                   <motion.div key={tutorial.id} variants={fadeInUp}>
                     <Card className="border-none shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer h-full">
                       <div className="relative h-56 overflow-hidden">
-                        <ImageWithFallback
+                        <img
                           src={tutorial.thumbnail}
                           alt={tutorial.title}
                           className="w-full h-full object-cover"

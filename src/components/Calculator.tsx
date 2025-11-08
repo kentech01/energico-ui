@@ -12,8 +12,6 @@ import {
 } from "./ui/select";
 import { Plus, Trash2, Calculator as CalcIcon, Zap } from "lucide-react";
 
-
-
 interface Device {
   id: number;
   type: string;
@@ -26,6 +24,25 @@ export function Calculator() {
   const [devices, setDevices] = useState<Device[]>([
     { id: 1, type: "computer", model: "", quantity: 1, energyUsage: "" },
   ]);
+  const [cost, setCost]= useState(0.1115)
+  const costPrice = [
+    {
+      category: "Household (Low Voltage) 0.4 kV",
+      price: 0.1115,
+    },
+    {
+      category: "Commercial (Low Voltage) 0.4 kV",
+      price: 0.135,
+    },
+    {
+      category: "Medium Voltage (10-35 kV)",
+      price: 0.10,
+    },
+    {
+      category: "High Voltage (110 kV+)",
+      price: 0.075,
+    },
+  ];
 
   const addDevice = () => {
     const newDevice: Device = {
@@ -51,14 +68,21 @@ export function Calculator() {
       )
     );
   };
+  const updatePrice = (value)=>{
+    setCost(costPrice[value].price)
+  }
 
   const totalEnergy = devices.reduce(
-    (sum, device) => sum + (typeof device.energyUsage === "number" ? device.quantity * device.energyUsage : 0),
+    (sum, device) =>
+      sum +
+      (typeof device.energyUsage === "number"
+        ? device.quantity * device.energyUsage
+        : 0),
     0
   );
 
   const monthlyKwh = totalEnergy * 24 * 30; // Assuming per hour usage
-  const monthlyCost = monthlyKwh * 0.12; // €0.12 per kWh average in Kosovo
+  const monthlyCost = monthlyKwh * cost; // €0.12 per kWh average in Kosovo
   const yearlyKwh = monthlyKwh * 12;
   const yearlyCost = monthlyCost * 12;
 
@@ -90,6 +114,31 @@ export function Calculator() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                <div className="w-[50%]">
+                  <Label>Tension Supply</Label>
+                  <Select
+                  defaultValue={0}
+                  onValueChange={(value) =>
+                    updatePrice(value)
+                  }
+                  >
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value={0}>
+                        Household (Low Voltage) 0.4 kV
+                      </SelectItem>
+                      <SelectItem value={1}>
+                        Commercial (Low Voltage) 0.4 kV
+                      </SelectItem>
+                      <SelectItem value={2}>
+                        Medium Voltage (10-35 kV)
+                      </SelectItem>
+                      <SelectItem value={3}>High Voltage (110 kV+)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
                 {devices.map((device, index) => (
                   <div
                     key={device.id}
@@ -216,12 +265,16 @@ export function Calculator() {
                     <Zap className="w-5 h-5 text-emerald-600" />
                     <span className="text-gray-600">Total Power</span>
                   </div>
-                  <p className="text-emerald-600">{totalEnergy.toFixed(2)} kWh/hour</p>
+                  <p className="text-emerald-600">
+                    {totalEnergy.toFixed(2)} kWh/hour
+                  </p>
                 </div>
 
                 {/* Monthly Estimates */}
                 <div>
-                  <h3 className="text-gray-900 text-lg font-medium mb-3">Monthly Estimates</h3>
+                  <h3 className="text-gray-900 text-lg font-medium mb-3">
+                    Monthly Estimates
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Energy Usage</span>
@@ -239,7 +292,9 @@ export function Calculator() {
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">
-                  <h3 className="text-gray-900 text-lg font-medium mb-3">Yearly Estimates</h3>
+                  <h3 className="text-gray-900 text-lg font-medium mb-3">
+                    Yearly Estimates
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-gray-600">Energy Usage</span>
@@ -258,7 +313,7 @@ export function Calculator() {
 
                 <div className="pt-4 border-t border-gray-200">
                   <p className="text-gray-500 text-xs">
-                    * Calculations based on 24/7 usage and €0.12/kWh average
+                    * Calculations based on 24/7 usage and €{cost}/kWh average
                     rate
                   </p>
                 </div>

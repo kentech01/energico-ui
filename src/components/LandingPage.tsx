@@ -25,7 +25,7 @@ import {
   Calendar,
   BookOpen,
 } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+// import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
@@ -244,7 +244,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative">
-                <ImageWithFallback
+                <img
                   src="https://images.unsplash.com/photo-1759536588260-e708d399a2ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGNpdHklMjB0ZWNobm9sb2d5JTIwZ3JlZW4lMjBlbmVyZ3l8ZW58MXx8fHwxNzYyMjY0NDM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Smart city powered by green AI energy"
                   className="rounded-3xl shadow-2xl w-full"
@@ -517,7 +517,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <ImageWithFallback
+              <img
                 src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbiUyMG9mZmljZSUyMGRpdmVyc2V8ZW58MXx8fHwxNzYyMjY0NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Energico team collaboration"
                 className="rounded-3xl shadow-2xl w-full"
@@ -624,7 +624,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
             transition={{ duration: 0.6 }}
             className="relative rounded-3xl overflow-hidden shadow-2xl"
           >
-            <ImageWithFallback
+            <img
               src="https://images.unsplash.com/photo-1597737413237-57dffb6f6b6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJpbGl0eSUyMGltcGFjdCUyMGdyZWVufGVufDF8fHx8MTc2MjI2MjY0OHww&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Sustainability impact"
               className="w-full h-80 object-cover"
@@ -673,7 +673,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
               <motion.div key={blog.id} variants={scaleIn}>
                 <Card className="border-none shadow-lg hover:shadow-2xl transition-all overflow-hidden group cursor-pointer h-full">
                   <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback
+                    <img
                       src={blog.image}
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
