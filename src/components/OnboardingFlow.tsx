@@ -93,7 +93,7 @@ export function OnboardingFlow() {
               <CardContent className="space-y-6">
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center hover:border-emerald-500 transition-colors cursor-pointer">
                   <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                  <Label htmlFor="bill-upload" className="cursor-pointer">
+                  <Label htmlFor="bill-upload" className="cursor-pointer justify-center">
                     <span className="text-emerald-600">Click to upload</span>
                     <span className="text-gray-600"> or drag and drop</span>
                   </Label>

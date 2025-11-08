@@ -61,7 +61,6 @@ export function MobileSidebar({
     { id: "insights", label: "Recommendations", icon: Lightbulb, badge: notificationCount },
     { id: "calculator", label: "Calculator", icon: Zap, badge: null },
     { id: "simulator", label: "Solar Simulator", icon: Leaf, badge: null },
-    { id: "blogs", label: "Blogs & Tutorials", icon: BookOpen, badge: null },
     { id: "reports", label: "Reports", icon: TrendingUp, badge: null },
   ];
   const navigate = useNavigate();

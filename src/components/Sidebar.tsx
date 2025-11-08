@@ -62,14 +62,13 @@ export function Sidebar({
     { id: "insights", label: "Recommendations", icon: Lightbulb },
     { id: "calculator", label: "Calculator", icon: Zap },
     { id: "simulator", label: "Solar Simulator", icon: Leaf },
-    { id: "blogs", label: "Blogs & Tutorials", icon: BookOpen },
     { id: "reports", label: "Reports", icon: TrendingUp },
   ];
 
-  const bottomNavItems = [
-    { id: "profile", label: "Profile", icon: Users },
-    { id: "help", label: "Help", icon: HelpCircle },
-  ];
+  // const bottomNavItems = [
+  //   { id: "profile", label: "Profile", icon: Users },
+  //   { id: "help", label: "Help", icon: HelpCircle },
+  // ];
 
   return (
     <aside className="hidden lg:flex lg:flex-col w-72 bg-gray-900 text-white">
@@ -143,25 +142,7 @@ export function Sidebar({
 
         <Separator className="my-4 bg-gray-800" />
 
-        {bottomNavItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = locationName === item.id;
-
-          return (
-            <button
-              key={item.id}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                isActive
-                  ? "bg-emerald-500 text-white"
-                  : "text-gray-400 hover:bg-gray-800 hover:text-white"
-              }`}
-              onClick={() => navigate(item.id)}
-            >
-              <Icon className="w-5 h-5" />
-              <span className="flex-1 text-left">{item.label}</span>
-            </button>
-          );
-        })}
+        
       </nav>
 
       {/* Quick Actions */}
