@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
-import {React} from "react";
+import { React } from "react";
 import { Badge } from "./ui/badge";
 import { useNavigate } from "react-router-dom";
 import {
@@ -29,11 +29,11 @@ import {
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-export interface LandingPageProps{
-  modalInteract: ()=>void;
+export interface LandingPageProps {
+  modalInteract: () => void;
 }
 
-export function LandingPage({modalInteract}: LandingPageProps) {
+export function LandingPage({ modalInteract }: LandingPageProps) {
   const navigation = useNavigate();
   const [scrollY, setScrollY] = useState(0);
 
@@ -77,7 +77,8 @@ export function LandingPage({modalInteract}: LandingPageProps) {
     {
       id: 1,
       title: "Kosovo's Energy Transition: Progress and Challenges",
-      excerpt: "An in-depth look at Kosovo's journey towards renewable energy...",
+      excerpt:
+        "An in-depth look at Kosovo's journey towards renewable energy...",
       image:
         "https://images.unsplash.com/photo-1635277055420-230e79907552?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrb3Nvdm8lMjBlbmVyZ3klMjBidWlsZGluZ3N8ZW58MXx8fHwxNzYyMjYyNjQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       category: "Kosovo Energy",
@@ -97,7 +98,8 @@ export function LandingPage({modalInteract}: LandingPageProps) {
     {
       id: 3,
       title: "Global Renewable Energy Trends 2025",
-      excerpt: "Latest statistics and predictions for renewable energy adoption...",
+      excerpt:
+        "Latest statistics and predictions for renewable energy adoption...",
       image:
         "https://images.unsplash.com/photo-1723177548474-b58ada59986b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMHJlbmV3YWJsZSUyMGVuZXJneSUyMGluc3RhbGxhdGlvbnxlbnwxfHx8fDE3NjIyNjQ0NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       category: "Global News",
@@ -159,9 +161,9 @@ export function LandingPage({modalInteract}: LandingPageProps) {
             </div>
           </motion.div>
           <div className="flex items-center gap-3">
-              <Button variant="ghost" onClick={()=>navigation("/blog")}>
-                Blog
-              </Button>
+            <Button variant="ghost" onClick={() => navigation("/blog")}>
+              Blog
+            </Button>
             <Button variant="outline" onClick={modalInteract}>
               Sign In
             </Button>
@@ -202,36 +204,30 @@ export function LandingPage({modalInteract}: LandingPageProps) {
                 className="text-xl text-gray-600 mb-8 leading-relaxed"
                 variants={fadeInUp}
               >
-                Your AI Energy Coach for Small Businesses. Get personalized
-                recommendations, track savings in real-time, and reduce your
-                carbon footprint with intelligent insights.
+                Kosovo’s First Smart Energy Coach for Businesses. Cut costs,
+                track your energy in real time, and plan your solar future — all
+                starting from your electricity bill.
               </motion.p>
 
-              <motion.div
-                className="flex flex-wrap gap-4"
-                variants={fadeInUp}
-              >
+              <motion.div className="flex flex-wrap gap-4" variants={fadeInUp}>
                 <Button
-                  onClick={()=> navigation('/auth')}
+                  onClick={() => navigation("/auth")}
                   className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
                 >
                   Start Free
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-                  <Button
-                    onClick={()=>navigation('/blog')}
-                    variant="outline"
-                    className="px-8 py-6 text-lg border-2 hover:bg-gray-50"
-                  >
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    Explore Blog & Tutorials
-                  </Button>
+                <Button
+                  onClick={() => navigation("/blog")}
+                  variant="outline"
+                  className="px-8 py-6 text-lg border-2 hover:bg-gray-50"
+                >
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Explore Blog & Tutorials
+                </Button>
               </motion.div>
 
-              <motion.p
-                className="text-gray-500 mt-6"
-                variants={fadeInUp}
-              >
+              <motion.p className="text-gray-500 mt-6" variants={fadeInUp}>
                 ✓ No credit card required • ✓ 2-minute setup • ✓ Free forever
               </motion.p>
             </motion.div>
@@ -426,7 +422,9 @@ export function LandingPage({modalInteract}: LandingPageProps) {
                   </div>
                   <div className="absolute -top-4 -right-4 w-16 h-16 bg-blue-200 rounded-full -z-10 animate-pulse" />
                 </div>
-                <h3 className="text-gray-900 mb-3">2. Get Smart Recommendations</h3>
+                <h3 className="text-gray-900 mb-3">
+                  2. Get Smart Recommendations
+                </h3>
                 <p className="text-gray-600">
                   Receive personalized, AI-powered recommendations with
                   estimated savings and implementation steps.
@@ -470,9 +468,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
                 <Users className="w-4 h-4 mr-2" />
                 About Our Team
               </Badge>
-              <h2 className="text-gray-900 mb-6">
-                Meet the Energico Team
-              </h2>
+              <h2 className="text-gray-900 mb-6">Meet the Energico Team</h2>
               <p className="text-gray-600 mb-4 text-lg">
                 We're a passionate team of energy experts, data scientists, and
                 sustainability advocates committed to helping small businesses
@@ -705,21 +701,23 @@ export function LandingPage({modalInteract}: LandingPageProps) {
             ))}
           </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <Button
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button
               type="button"
-                onClick={()=>{navigation('/blog#topBlog')}}
-                className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-6 text-lg shadow-lg"
-              >
-                View All Articles & Tutorials
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </motion.div>
+              onClick={() => {
+                navigation("/blog#topBlog");
+              }}
+              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-6 text-lg shadow-lg"
+            >
+              View All Articles & Tutorials
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -768,9 +766,7 @@ export function LandingPage({modalInteract}: LandingPageProps) {
                     </div>
                     <div>
                       <p className="text-gray-900">Sarah Chen</p>
-                      <p className="text-gray-500 text-sm">
-                        Owner, Green Café
-                      </p>
+                      <p className="text-gray-500 text-sm">Owner, Green Café</p>
                     </div>
                   </div>
                 </CardContent>
@@ -789,9 +785,9 @@ export function LandingPage({modalInteract}: LandingPageProps) {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-4 text-lg italic">
-                    "The renewable energy simulator was a game-changer. It helped
-                    us plan our solar installation and we're now saving €400 per
-                    month!"
+                    "The renewable energy simulator was a game-changer. It
+                    helped us plan our solar installation and we're now saving
+                    €400 per month!"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -846,19 +842,19 @@ export function LandingPage({modalInteract}: LandingPageProps) {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
-                onClick={()=> navigation("/auth")}
+                onClick={() => navigation("/auth")}
                 className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-6 text-lg shadow-xl"
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-                <Button
-                  onClick={()=>navigation('/blog')}
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
-                >
-                  Learn More
-                </Button>
+              <Button
+                onClick={() => navigation("/blog")}
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              >
+                Learn More
+              </Button>
             </div>
             <p className="text-emerald-100 mt-6">
               ✓ Free forever • ✓ No credit card • ✓ Setup in 2 minutes
@@ -892,20 +888,20 @@ export function LandingPage({modalInteract}: LandingPageProps) {
               <ul className="space-y-2">
                 <li>
                   <button
-                    onClick={()=>navigation("/auth")}
+                    onClick={() => navigation("/auth")}
                     className="text-gray-400 hover:text-emerald-400 transition-colors"
                   >
                     Get Started
                   </button>
                 </li>
-                  <li>
-                    <button
-                      onClick={()=>navigation("/blog")}
-                      className="text-gray-400 hover:text-emerald-400 transition-colors"
-                    >
-                      Blog & Tutorials
-                    </button>
-                  </li>
+                <li>
+                  <button
+                    onClick={() => navigation("/blog")}
+                    className="text-gray-400 hover:text-emerald-400 transition-colors"
+                  >
+                    Blog & Tutorials
+                  </button>
+                </li>
                 <li>
                   <a
                     href="#"
